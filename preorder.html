@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-order for Market Pickup | Fire Swamp Provisions</title>
+<meta name="description" content="Pre-order Fire Swamp Provisions bread and pastries for pickup at the Sunday or Thursday San Rafael farmers market. Pick your items, choose a market day, and pay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="brand">
+    <img src="https://static.wixstatic.com/media/01393c_5ddc8eef98e34e16b87d9b1e404d165f~mv2.png/v1/fit/w_220,h_220,q_90/file.png" alt="Fire Swamp Provisions logo">
+    <span class="bt">Fire&nbsp;Swamp<br><b>Provisions</b></span>
+  </a>
+  <nav class="links" id="navlinks">
+    <a href="index.html#find">Find Us</a>
+    <a href="bakes.html">Bakes</a>
+    <a href="index.html#story">Story</a>
+    <a href="farms.html">Farms &amp; Friends</a>
+    <a href="giftcards.html">Gift Cards</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="preorder.html" class="btn">Pre-order</a>
+  </nav>
+  <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Order ahead</span>
+    <h1>Pre-order for market pickup</h1>
+    <p>Pick what you want, choose which market to grab it at, and it'll be bagged and waiting. <b>We bake to order</b>, so reserving ahead is the surest way to get exactly what you're after before it sells out.</p>
+  </div>
+</section>
+
+<section id="preorder">
+  <div class="wrap">
+    <ol class="po-steps">
+      <li class="active">Your order</li>
+      <li>Pickup</li>
+      <li>Payment</li>
+      <li>Done</li>
+    </ol>
+
+    <!-- STEP 1: MENU -->
+    <div class="po-step" data-step="1">
+      <h2>Build your order</h2>
+      <p class="po-sub">Everything is naturally leavened and made by hand. Set your quantities below.</p>
+      <div class="po-grid">
+        <div class="po-menu" id="poMenu"></div>
+        <aside class="po-summary">
+          <h3>Order summary</h3>
+          <div class="po-lines" id="poLines1"></div>
+          <div class="po-total"><span>Subtotal</span><span class="r" id="poTotal1">$0.00</span></div>
+          <div class="po-actions"><button class="btn" id="poContinue1" disabled>Continue to pickup</button></div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- STEP 2: PICKUP + DETAILS -->
+    <div class="po-step" data-step="2" hidden>
+      <h2>Pickup &amp; your details</h2>
+      <p class="po-sub">We don't ship. Choose a market and we'll have your order ready at the tent.</p>
+      <div class="po-field" id="f-slot">
+        <label>Choose your pickup</label>
+        <div class="po-slots" id="poSlots"></div>
+        <div class="err">Please choose a pickup day.</div>
+      </div>
+      <div class="po-row">
+        <div class="po-field" id="f-name">
+          <label>Full name</label>
+          <input id="poName" type="text" autocomplete="name" placeholder="Inigo Montoya">
+          <div class="err">Please enter your name.</div>
+        </div>
+        <div class="po-field" id="f-phone">
+          <label>Phone</label>
+          <input id="poPhone" type="tel" autocomplete="tel" placeholder="(415) 555-0142">
+          <div class="err">Please enter a phone number.</div>
+        </div>
+      </div>
+      <div class="po-field" id="f-email">
+        <label>Email</label>
+        <input id="poEmail" type="email" autocomplete="email" placeholder="you@email.com">
+        <div class="err">Please enter a valid email.</div>
+      </div>
+      <div class="po-actions">
+        <button class="btn ghost" id="poBack2">Back</button>
+        <button class="btn" id="poContinue2">Continue to payment</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: PAYMENT (Stripe-style, test mode) -->
+    <div class="po-step" data-step="3" hidden>
+      <h2>Payment</h2>
+      <p class="po-sub">Your card secures the order. You'll pay now and just grab your bag at the market.</p>
+      <div class="po-pay-grid">
+        <div class="po-card">
+          <span class="po-testbadge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Test mode &middot; demo checkout</span>
+          <div class="po-field" id="f-card">
+            <label>Card information</label>
+            <div class="po-cardbox">
+              <div class="po-cardrow">
+                <svg width="22" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                <input id="poCardNum" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234">
+              </div>
+              <div class="po-carddivide">
+                <div class="po-cardrow"><input id="poExp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY"></div>
+                <div class="po-cardrow"><input id="poCvc" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC"></div>
+              </div>
+            </div>
+            <div class="err">Enter your card details (any numbers work in demo mode).</div>
+          </div>
+          <div class="po-stripe">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Secure checkout powered by <b>Stripe</b>
+          </div>
+        </div>
+        <aside class="po-summary">
+          <h3>Order summary</h3>
+          <div class="po-lines" id="poLines3"></div>
+          <div class="po-total"><span>Total</span><span class="r" id="poTotal3">$0.00</span></div>
+          <div class="po-actions">
+            <button class="btn ghost" id="poBack3">Back</button>
+            <button class="btn" id="poPay">Pay</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- STEP 4: CONFIRMATION + NEWSLETTER + SENT -->
+    <div class="po-step" data-step="4" hidden>
+      <div class="po-confirm">
+        <div class="po-check">&#10003;</div>
+        <h2>Thank you, your order is in</h2>
+        <div class="po-ordno" id="poOrdNo">Order</div>
+        <p class="po-said">We've emailed a confirmation to <b id="poConfEmail">you</b>. Bring yourself to the market and your bag will be waiting at the Fire Swamp tent.</p>
+        <div class="po-recap" id="poRecap"></div>
+
+        <div class="po-news">
+          <h3>One last thing</h3>
+          <p>Want weekly specials, market updates, and the occasional excellent treat before anybody else?</p>
+          <div class="po-field" style="margin-bottom:14px"><input id="poNewsEmail" type="email" placeholder="you@email.com"></div>
+          <div class="row">
+            <button class="btn" id="poSubscribe">Subscribe me</button>
+            <button class="btn ghost" id="poSkip">No thanks</button>
+            <span class="gift-note" id="poNewsMsg"></span>
+          </div>
+        </div>
+
+        <div class="po-sent" id="poSent" hidden>
+          <div class="po-sent-row"><span class="ic">&#10003;</span><span>Confirmation emailed to <b id="poSentEmail">you</b>.</span></div>
+          <div class="po-sent-row"><span class="ic">&#10003;</span><span>Your pre-order has been sent to the bakery at <b>fireswampprovisions@gmail.com</b>.</span></div>
+          <div class="po-sent-row"><span class="ic">&#10003;</span><span>Payment captured via <b>Stripe</b> (test mode).</span></div>
+          <div class="po-actions"><button class="btn ghost" id="poRestart">Place another order</button></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="po-demo-note"><b>Heads up, this is a working demo.</b> Item selection, pickup, totals, and the order flow are real, but payment runs in test mode, so no card is charged and no email is actually sent yet. Going live needs Stripe connected (keys + Checkout or a Payment Intent) and a small backend or serverless function to email each order to fireswampprovisions@gmail.com. Those hookup points are marked in app.js.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://static.wixstatic.com/media/01393c_5ddc8eef98e34e16b87d9b1e404d165f~mv2.png/v1/fit/w_220,h_220,q_90/file.png" alt="Fire Swamp Provisions logo">
+        <p>Local products, made with love and care. A portion of all proceeds donated to support social good.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Find Us</h4>
+        <a href="index.html#find">Sunday market</a>
+        <a href="index.html#find">Thursday market</a>
+        <a href="index.html#find">Stockists</a>
+        <a href="preorder.html">Pre-order</a>
+      </div>
+      <div class="foot-col">
+        <h4>The Bakery</h4>
+        <a href="bakes.html">Bakes</a>
+        <a href="index.html#story">Our story</a>
+        <a href="farms.html">Farms &amp; Friends</a>
+        <a href="giftcards.html">Gift cards</a>
+      </div>
+      <div class="foot-col">
+        <h4>Say Hi / Work With Us</h4>
+        <a href="mailto:fireswampprovisions@gmail.com">fireswampprovisions@gmail.com</a>
+        <a href="jobs.html">We're hiring</a>
+        <p>San Rafael, California</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="yr"></span> Fire Swamp Provisions</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/fireswampprovisions" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/FireSwampProvisions/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobilebar">
+  <a class="find" href="index.html#find">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Find Us
+  </a>
+  <a class="order" href="preorder.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    Pre-order
+  </a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
