@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Swamp Provisions, Fresh Artisan Breads in San Rafael and Marin</title>
+<meta name="description" content="Sourdough, bagels, and good things to eat. Handmade in Marin by a real person. Find us at the Sunday and Thursday San Rafael farmers markets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --char:#181210;--char-2:#120d0b;--oven:#241a15;--oven-2:#2e211a;
+  --ember:#E2622B;--ember-deep:#B23A1E;--gold:#E9A23B;--crumb:#F3E9D8;--ash:#A9988A;
+  --line:rgba(243,233,216,.12);
+  --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;
+  --maxw:1200px;--barh:0px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--char);color:var(--crumb);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--ember);color:var(--char)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ember);display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--ember);display:inline-block}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spacing:-.01em}
+
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 30px;background:linear-gradient(to bottom,rgba(18,13,11,.94),rgba(18,13,11,0));backdrop-filter:blur(2px);transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+header.nav.solid{background:rgba(18,13,11,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 30px}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(226,98,43,.5));transition:width .3s,height .3s}
+header.nav.solid .brand img{width:50px;height:50px}
+.brand .bt{font-family:var(--mono);font-size:.82rem;letter-spacing:.17em;text-transform:uppercase;color:var(--crumb);line-height:1.45}
+.brand .bt b{font-weight:700;color:var(--gold)}
+nav.links{display:flex;align-items:center;gap:32px}
+nav.links a{font-size:.95rem;color:var(--crumb);opacity:.85;transition:opacity .2s;position:relative}
+nav.links a:hover{opacity:1}
+nav.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--ember);transition:width .25s}
+nav.links a:not(.btn):hover::after{width:100%}
+.btn{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;background:var(--ember);color:var(--char);padding:12px 22px;border-radius:2px;font-weight:700;transition:transform .15s,box-shadow .2s,background .2s;display:inline-flex;align-items:center;gap:.5em}
+.btn:hover{background:var(--gold);transform:translateY(-1px);box-shadow:0 8px 24px rgba(226,98,43,.3)}
+.btn.ghost{background:transparent;color:var(--crumb);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ember);color:var(--gold);box-shadow:none}
+.menu-toggle{display:none;background:none;border:0;color:var(--crumb);cursor:pointer;flex-direction:column;gap:6px;padding:8px}
+.menu-toggle span{width:26px;height:2px;background:var(--crumb);transition:.3s}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:150px 0 90px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42}
+.hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(110% 80% at 50% 30%,rgba(226,98,43,.30),transparent 60%),radial-gradient(90% 70% at 50% 102%,rgba(178,58,30,.30),transparent 65%),linear-gradient(to bottom,rgba(18,13,11,.58),rgba(18,13,11,.34) 42%,var(--char) 93%)}
+.hero .wrap{position:relative;z-index:2;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-seal{width:176px;height:176px;margin:0 auto 32px;position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 50% 38%,#fffaf2,var(--crumb) 74%);box-shadow:0 0 0 1px rgba(243,233,216,.6),inset 0 2px 12px rgba(120,60,20,.12),0 16px 44px rgba(0,0,0,.45)}
+.hero-seal::before{content:"";position:absolute;inset:-22px;border-radius:50%;background:radial-gradient(circle,rgba(226,98,43,.52),transparent 70%);animation:flicker 4s ease-in-out infinite;z-index:-1}
+.hero-seal img{width:74%;height:74%;object-fit:contain;position:relative}
+@keyframes flicker{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.hero-status{display:inline-flex;align-items:center;gap:.7em;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--crumb);border:1px solid var(--line);background:rgba(46,33,26,.55);backdrop-filter:blur(6px);padding:10px 16px;border-radius:40px;margin-bottom:28px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--gold);animation:pulse 2.4s infinite}
+.dot.live{background:#7bd66a}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(233,162,59,.55)}70%{box-shadow:0 0 0 9px rgba(233,162,59,0)}100%{box-shadow:0 0 0 0 rgba(233,162,59,0)}}
+.hero h1{font-size:clamp(3rem,9vw,7rem);font-weight:600;max-width:15ch;margin:0 auto}
+.hero h1 .glow{color:var(--gold);font-style:italic;font-weight:500}
+.hero p.lede{font-size:1.18rem;max-width:46ch;margin:26px auto 34px;color:var(--ash)}
+.hero p.lede b{color:var(--crumb);font-weight:600}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+
+section{position:relative;padding:104px 0}
+.sec-head{margin-bottom:54px;max-width:700px}
+.sec-head h2{font-size:clamp(2.1rem,5vw,3.6rem);margin-top:16px}
+.sec-head p{color:var(--ash);margin-top:18px;font-size:1.08rem}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+#find{background:linear-gradient(var(--char-2),var(--char))}
+.markets{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:48px}
+.market{border:1px solid var(--line);border-radius:6px;padding:30px;background:linear-gradient(155deg,var(--oven),var(--char-2));position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.market:hover{transform:translateY(-4px);border-color:rgba(226,98,43,.4)}
+.market::before{content:"";position:absolute;top:-40%;right:-20%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(226,98,43,.16),transparent 70%)}
+.market .day{font-family:var(--display);font-size:1.9rem;font-weight:600;position:relative}
+.market .tag{position:absolute;top:26px;right:26px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:40px;border:1px solid var(--line);color:var(--ash)}
+.market .tag.now{color:#7bd66a;border-color:rgba(123,214,106,.4);background:rgba(123,214,106,.08)}
+.market .tag.next{color:var(--gold);border-color:rgba(233,162,59,.4);background:rgba(233,162,59,.08)}
+.market dl{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:.96rem}
+.market dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);padding-top:3px}
+.market dd{color:var(--crumb)}
+.market a.dir{display:inline-flex;align-items:center;gap:.4em;margin-top:22px;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.market a.dir:hover{color:var(--ember)}
+.stk-head{font-family:var(--mono);font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);margin-bottom:22px}
+.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.stk{background:var(--char);padding:18px 20px;transition:background .25s;display:flex;align-items:center;gap:14px}
+.stk:hover{background:var(--oven)}
+.logo-tile{width:42px;height:42px;border-radius:9px;background:#fff;border:1px solid rgba(0,0,0,.06);flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;box-shadow:0 1px 4px rgba(0,0,0,.28)}
+.logo-tile img{width:80%;height:80%;object-fit:contain}
+.logo-tile img.inv{filter:invert(1)}
+.logo-tile .mono{display:none;font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--char)}
+.stk .txt{min-width:0}
+.stk .name{font-weight:600;font-size:1rem;display:flex;align-items:center;gap:.4em}
+.stk .name .arr{color:var(--ember);opacity:0;transform:translateX(-4px);transition:.2s;font-size:.85em}
+.stk:hover .name .arr{opacity:1;transform:none}
+.stk .loc{font-family:var(--mono);font-size:.66rem;letter-spacing:.02em;color:var(--ash);margin-top:3px}
+
+.bakes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.bake{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--char-2);display:flex;flex-direction:column;transition:transform .35s,border-color .35s}
+.bake:hover{transform:translateY(-5px);border-color:rgba(226,98,43,.45)}
+.bake .ph{aspect-ratio:16/11;overflow:hidden;background:var(--oven);position:relative}
+.bake .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.bake:hover .ph img{transform:scale(1.06)}
+.bake .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,13,11,.6),transparent 50%)}
+.bake .body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.bake .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.bake h3{font-size:1.5rem}
+.bake .price{font-family:var(--mono);font-weight:700;font-size:1.05rem;color:var(--gold);white-space:nowrap}
+.bake .ing{font-family:var(--mono);font-size:.72rem;line-height:1.7;color:var(--ash);margin-top:12px}
+.bake .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:40px;border:1px solid var(--line);color:var(--ash)}
+.chip.sub{color:var(--gold);border-color:rgba(233,162,59,.35)}
+.chip.pickup{color:var(--ember);border-color:rgba(226,98,43,.35)}
+.bake .act{margin-top:auto;padding-top:22px}
+.bake .act a{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--crumb);display:inline-flex;align-items:center;gap:.5em;border-bottom:1px solid var(--line);padding-bottom:4px;transition:color .2s,border-color .2s}
+.bake .act a:hover{color:var(--gold);border-color:var(--gold)}
+.bakes-note{margin-top:30px;font-size:.96rem;color:var(--ash);border-left:2px solid var(--ember);padding:6px 0 6px 20px;max-width:60ch}
+.bakes-note b{color:var(--crumb)}
+
+#story{background:linear-gradient(var(--char),var(--char-2))}
+.story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:start}
+.pullquote{font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.35;color:var(--crumb);font-weight:500;margin:8px 0 30px}
+.pullquote span{color:var(--gold)}
+.story-grid p{margin-bottom:18px;color:var(--ash)}
+.story-grid p b{color:var(--crumb);font-weight:600}
+.byline{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-top:8px}
+.give{border:1px solid var(--line);border-radius:8px;padding:30px;background:linear-gradient(155deg,var(--oven),var(--char-2));margin-bottom:26px;position:relative;overflow:hidden}
+.give::before{content:"";position:absolute;top:-30%;right:-10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(233,162,59,.14),transparent 70%)}
+.give .big{font-family:var(--display);font-size:3.2rem;font-weight:700;color:var(--gold);line-height:1;position:relative}
+.give .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-top:10px}
+.give p{font-size:.95rem;margin-top:14px;color:var(--crumb)}
+.team{display:flex;gap:14px;margin-top:6px}
+.team figure{flex:1;text-align:center}
+.team .av{aspect-ratio:1;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--oven)}
+.team .av img{width:100%;height:100%;object-fit:cover}
+.team figcaption{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--ash);margin-top:10px;text-transform:uppercase}
+.team figcaption b{display:block;color:var(--crumb);font-size:.82rem;letter-spacing:.02em;margin-bottom:2px;text-transform:none;font-family:var(--body);font-weight:600}
+
+.farm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(244px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.farm{background:var(--char);padding:18px 20px;transition:background .25s;display:flex;align-items:center;gap:14px}
+.farm:hover{background:var(--oven)}
+.farm .txt{min-width:0;flex:1}
+.farm .n{font-weight:600;display:flex;align-items:center;gap:.4em}
+.farm .n .arr{color:var(--ember);opacity:0;transform:translateX(-4px);transition:.2s;font-size:.85em}
+.farm:hover .n .arr{opacity:1;transform:none}
+.farm .r{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--ash);text-transform:uppercase;margin-top:3px}
+
+#gram{background:linear-gradient(var(--char-2),var(--char))}
+.ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:30px}
+.ig-grid figure{aspect-ratio:1;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--oven);position:relative}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ig-grid figure:hover img{transform:scale(1.08)}
+.ig-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,13,11,.35),transparent 60%);opacity:0;transition:opacity .3s}
+.ig-grid figure:hover::after{opacity:1}
+.ig-embed{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:30px}
+.ig-embed .instagram-media{margin:0!important}
+.ig-cell{aspect-ratio:1;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--oven);position:relative;display:block}
+.ig-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ig-cell:hover img{transform:scale(1.08)}
+.ig-cell::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,13,11,.42),transparent 55%);opacity:0;transition:opacity .3s}
+.ig-cell:hover::after{opacity:1}
+
+#list{background:linear-gradient(160deg,var(--oven),var(--char-2))}
+.list-inner{max-width:640px;margin:0 auto;text-align:center}
+.list-inner h2{font-size:clamp(2rem,5vw,3.2rem);margin:18px 0}
+.list-inner p{color:var(--ash);margin-bottom:30px}
+.subscribe{display:flex;gap:10px;max-width:480px;margin:0 auto}
+.subscribe input{flex:1;background:var(--char);border:1px solid var(--line);border-radius:3px;padding:15px 16px;color:var(--crumb);font-family:var(--body);font-size:1rem}
+.subscribe input:focus{outline:none;border-color:var(--ember)}
+.subscribe input::placeholder{color:var(--ash)}
+
+footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.foot-brand img{width:84px;height:84px;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 0 16px rgba(226,98,43,.4))}
+.foot-brand p{color:var(--ash);font-size:.92rem;max-width:30ch}
+.foot-col h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;color:var(--ash);font-size:.92rem;margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;border-top:1px solid var(--line)}
+.foot-bottom p{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ash)}
+.socials{display:flex;gap:14px}
+.socials a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--crumb);transition:.2s}
+.socials a:hover{border-color:var(--ember);color:var(--gold);transform:translateY(-2px)}
+.socials svg{width:17px;height:17px}
+
+.mobilebar{display:none}
+
+@media(max-width:980px){
+  .markets{grid-template-columns:1fr}
+  .bakes{grid-template-columns:1fr}
+  .story-grid{grid-template-columns:1fr;gap:40px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:760px){
+  body{font-size:16px;--barh:64px}
+  .brand img{width:50px;height:50px}
+  .brand .bt{font-size:.74rem;letter-spacing:.14em}
+  nav.links{position:fixed;inset:0 0 0 auto;width:min(82vw,340px);background:var(--char-2);flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;padding:40px 36px;transform:translateX(100%);transition:transform .35s;border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.5)}
+  nav.links.open{transform:none}
+  nav.links a{font-size:1.25rem;padding:12px 0;width:100%;opacity:.95}
+  nav.links a.btn{margin-top:14px;justify-content:center;padding:16px;font-size:.9rem;width:100%}
+  .menu-toggle{display:flex;z-index:101}
+  .menu-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .hero{min-height:auto;padding:140px 0 70px}
+  .hero-seal{width:134px;height:134px;margin:0 auto 22px}
+  .hero h1{font-size:clamp(2.6rem,12vw,3.6rem)}
+  .hero p.lede{font-size:1.05rem;margin:20px 0 28px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{justify-content:center;padding:15px}
+  section{padding:64px 0;scroll-margin-top:80px}
+  .sec-head{margin-bottom:38px}
+  .stk-grid,.farm-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr;gap:26px}
+  .subscribe{flex-direction:column}
+  .subscribe .btn{justify-content:center;padding:15px}
+  footer{padding-bottom:calc(40px + var(--barh))}
+  .mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:95;height:var(--barh);background:rgba(18,13,11,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px 12px;gap:10px}
+  .mobilebar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;border-radius:6px}
+  .mobilebar a.find{color:var(--crumb);border:1px solid var(--line)}
+  .mobilebar a.order{background:var(--ember);color:var(--char);font-weight:700}
+  .mobilebar svg{width:19px;height:19px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <img src="https://static.wixstatic.com/media/01393c_5ddc8eef98e34e16b87d9b1e404d165f~mv2.png/v1/fit/w_220,h_220,q_90/file.png" alt="Fire Swamp Provisions logo">
+    <span class="bt">Fire&nbsp;Swamp<br><b>Provisions</b></span>
+  </a>
+  <nav class="links" id="navlinks">
+    <a href="#find">Find Us</a>
+    <a href="#bakes">Bakes</a>
+    <a href="#story">Story</a>
+    <a href="#farms">Farms &amp; Friends</a>
+    <a href="mailto:fireswampprovisions@gmail.com?subject=Pre-order%20for%20market%20pickup" class="btn">Pre-order</a>
+  </nav>
+  <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://static.wixstatic.com/media/01393c_7d8d68c2e54c4ae5a99535f0b0d2944b~mv2.jpg/v1/fill/w_1800,h_1350,al_c,q_85,enc_auto/file.jpg" alt="Fresh sourdough loaf">
+  </div>
+  <div class="wrap">
+    <div class="hero-seal">
+      <img src="https://static.wixstatic.com/media/01393c_5ddc8eef98e34e16b87d9b1e404d165f~mv2.png/v1/fit/w_320,h_320,q_90/file.png" alt="Fire Swamp Provisions">
+    </div>
+    <div class="hero-status" id="heroStatus">
+      <span class="dot" id="heroDot"></span><span id="heroStatusText">Checking the market schedule...</span>
+    </div>
+    <h1>Fresh bread is a <span class="glow">here&#8209;and&#8209;now</span> thing.</h1>
+    <p class="lede">Sourdough, bagels, and other good things to eat. Made by hand in Marin <b>by a real person</b>, with really good ingredients from the people who grow them. Here is where to find ours this week.</p>
+    <div class="hero-cta">
+      <a href="#find" class="btn">Where to find us</a>
+      <a href="#bakes" class="btn ghost">See what we bake</a>
+    </div>
+  </div>
+</section>
+
+<section id="find">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The most important page</span>
+      <h2>Find us this week</h2>
+      <p>We don't ship, and we like it that way. Bread is best the morning it's baked. Catch us at the San Rafael farmers markets twice a week, or pick ours up at one of the spots below.</p>
+    </div>
+    <div class="markets reveal">
+      <div class="market" data-day="0">
+        <div class="day">Sunday</div>
+        <span class="tag" data-tag="0">Marin Civic Center</span>
+        <dl>
+          <dt>Where</dt><dd>3501 Civic Center Dr, San Rafael</dd>
+          <dt>When</dt><dd>8:00 AM to 1:00 PM, rain or shine</dd>
+          <dt>Look for</dt><dd>The Fire Swamp tent. Follow your nose.</dd>
+        </dl>
+        <a class="dir" href="https://maps.google.com/?q=3501+Civic+Center+Dr+San+Rafael" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div class="market" data-day="4">
+        <div class="day">Thursday</div>
+        <span class="tag" data-tag="4">Avenue of the Flags</span>
+        <dl>
+          <dt>Where</dt><dd>10 Avenue of the Flags, San Rafael</dd>
+          <dt>When</dt><dd>8:00 AM to 1:00 PM</dd>
+          <dt>Look for</dt><dd>Bagels go fast. Come hungry, come early.</dd>
+        </dl>
+        <a class="dir" href="https://maps.google.com/?q=10+Avenue+of+the+Flags+San+Rafael" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="stk-head">Also carried by good people at</div>
+      <div class="stk-grid">
+        <a class="stk" href="https://belfaresonoma.com/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">B</span></span><span class="txt"><span class="name">Belfare <span class="arr">&#8599;</span></span><span class="loc">Petaluma, we make their buns</span></span></a>
+        <a class="stk" href="https://rozmarykitchen.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://cdn.shopify.com/s/files/1/0519/1080/3605/files/Rozmary-Logo-WEB-Stacked-DeepClay.png?width=400" alt="Rozmary Kitchen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">R</span></span><span class="txt"><span class="name">Rozmary Kitchen <span class="arr">&#8599;</span></span><span class="loc">San Rafael markets</span></span></a>
+        <a class="stk" href="https://thefarmerswifeca.com/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">F</span></span><span class="txt"><span class="name">The Farmer's Wife <span class="arr">&#8599;</span></span><span class="loc">Point Reyes Station &amp; Sebastopol</span></span></a>
+        <a class="stk" href="https://www.bubbalas.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://images.squarespace-cdn.com/content/v1/6862fbbe7145402388b68eae/79df955f-bf16-4399-8e61-6f7ed21acf14/bubbalas-logo-3.png?format=750w" alt="Bubbala's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">B</span></span><span class="txt"><span class="name">Bubbala's <span class="arr">&#8599;</span></span><span class="loc">San Anselmo</span></span></a>
+        <a class="stk" href="https://www.endlessquestroasters.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://www.google.com/s2/favicons?domain=endlessquestroasters.com&sz=128" alt="Endless Quest" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">E</span></span><span class="txt"><span class="name">Endless Quest Coffee <span class="arr">&#8599;</span></span><span class="loc">Corte Madera</span></span></a>
+        <a class="stk" href="https://www.google.com/maps/search/Earth's+Bounty+San+Francisco" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">E</span></span><span class="txt"><span class="name">Earth's Bounty <span class="arr">&#8599;</span></span><span class="loc">San Francisco, Napa &amp; Sonoma</span></span></a>
+        <a class="stk" href="https://www.lonemountainbarbecue.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://www.google.com/s2/favicons?domain=lonemountainbarbecue.com&sz=128" alt="Lone Mountain BBQ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">L</span></span><span class="txt"><span class="name">Lone Mountain BBQ <span class="arr">&#8599;</span></span><span class="loc">Bay Area</span></span></a>
+        <a class="stk" href="https://www.331fish.com/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">F</span></span><span class="txt"><span class="name">Fish. Restaurant <span class="arr">&#8599;</span></span><span class="loc">Sausalito</span></span></a>
+        <a class="stk" href="https://www.longwaycalifornia.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://www.google.com/s2/favicons?domain=longwaycalifornia.com&sz=128" alt="Longway" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">L</span></span><span class="txt"><span class="name">Longway <span class="arr">&#8599;</span></span><span class="loc">San Anselmo</span></span></a>
+        <a class="stk" href="https://www.piginapickle.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://static1.squarespace.com/static/670d899e6664ba1a73dd4c44/t/670d89a66664ba1a73dd4e5c/1728938983744/Pig%2BIn%2Bthe%2BPickle%2BLogo%2BCMYK%2B%281%29%2B%281%29.png?format=500w" alt="Pig In A Pickle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">P</span></span><span class="txt"><span class="name">Pig In A Pickle <span class="arr">&#8599;</span></span><span class="loc">Corte Madera</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bakes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we bake</span>
+      <h2>The usual suspects</h2>
+      <p>Naturally leavened, made by hand, ingredient lists you can actually read. Pre-order for market pickup, or set up a standing order so it's just there every week.</p>
+    </div>
+    <div class="bakes">
+      <article class="bake reveal">
+        <div class="ph"><img src="https://static.wixstatic.com/media/01393c_df6a6af05de94183a410cd352e13a976~mv2.png/v1/fill/w_900,h_620,al_c,q_85,enc_auto/file.png" alt="Sourdough bagels"></div>
+        <div class="body">
+          <div class="top"><h3>Sourdough Bagels</h3><span class="price">$15 / 6</span></div>
+          <div class="ing">Organic flours, water, brown sugar, diastatic malt, sea salt. Plain, everything, bialys, jalapeno cheddar. Mix and match, just tell us how.</div>
+          <div class="meta"><span class="chip pickup">Local pickup</span><span class="chip sub">Subscribe $13.50 / wk</span></div>
+          <div class="act"><a href="mailto:fireswampprovisions@gmail.com?subject=Bagel%20pre-order">Pre-order bagels</a></div>
+        </div>
+      </article>
+      <article class="bake reveal">
+        <div class="ph"><img src="https://static.wixstatic.com/media/01393c_7d8d68c2e54c4ae5a99535f0b0d2944b~mv2.jpg/v1/fill/w_900,h_620,al_c,q_85,enc_auto/file.jpg" alt="Sourdough sandwich loaf"></div>
+        <div class="body">
+          <div class="top"><h3>Sourdough Sandwich Loaf</h3><span class="price">$10</span></div>
+          <div class="ing">Organic flours (wheat, rye, barley), water, sea salt. Three ingredients. The soft crumb everyday loaf that ruins store bread for you.</div>
+          <div class="meta"><span class="chip pickup">Local pickup</span><span class="chip sub">Subscribe from $9</span></div>
+          <div class="act"><a href="mailto:fireswampprovisions@gmail.com?subject=Sourdough%20loaf%20pre-order">Pre-order a loaf</a></div>
+        </div>
+      </article>
+      <article class="bake reveal">
+        <div class="ph"><img src="https://static.wixstatic.com/media/01393c_945c5a73193c49a995a3f1f20d374f10~mv2.png/v1/fill/w_900,h_620,al_c,q_85,enc_auto/file.png" alt="English muffins"></div>
+        <div class="body">
+          <div class="top"><h3>English Muffins</h3><span class="price">$13 / 6</span></div>
+          <div class="ing">Organic flours (wheat, rye), water, butter, dry milk, sugar, yeast, sea salt, cornmeal. All nooks, all crannies, built for too much butter.</div>
+          <div class="meta"><span class="chip pickup">Local pickup</span><span class="chip sub">Subscribe $11.70 / wk</span></div>
+          <div class="act"><a href="mailto:fireswampprovisions@gmail.com?subject=English%20muffin%20pre-order">Pre-order muffins</a></div>
+        </div>
+      </article>
+      <article class="bake reveal">
+        <div class="ph"><img src="https://static.wixstatic.com/media/01393c_b950c9ae503e428c9b672d1b3a80151b~mv2.jpg/v1/fill/w_900,h_620,al_c,q_85,enc_auto/file.jpg" alt="Rice Krispie treats"></div>
+        <div class="body">
+          <div class="top"><h3>RKTs</h3><span class="price">$5</span></div>
+          <div class="ing">Rice Krispies, marshmallows, butter, sea salt, vanilla bean. The grown up version of the thing you loved as a kid. No notes.</div>
+          <div class="meta"><span class="chip pickup">Local pickup</span></div>
+          <div class="act"><a href="mailto:fireswampprovisions@gmail.com?subject=RKT%20pre-order">Add to your order</a></div>
+        </div>
+      </article>
+    </div>
+    <p class="bakes-note reveal"><b>The menu moves with the market.</b> Scones, pie, laminated pastries, and seasonal preserves show up when the farms are ready and the oven is hot. Follow along on Instagram for the week's specials, or just come find out in person.</p>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Treating ourselves since 2020</span>
+      <h2>How a fire swamp got into the bread business</h2>
+    </div>
+    <div class="story-grid">
+      <div class="reveal">
+        <p class="pullquote">"I like baking <span>and</span> hate racism."</p>
+        <p>It started in the early pandemic. The fancy in home dinner parties dried up overnight, daycare closed, and a friend was running a fundraiser called <b>Bakers Against Racism</b>. So I baked loaves and bagels, gave the proceeds to the NAACP Legal Defense Fund, and a little Facebook group called "Chef Alex's Weekly Treats" quietly turned into several hundred neighbors.</p>
+        <p>We never stopped. We still source the best ingredients we can find, mostly from the farms down the page, and we still give a percentage of everything back.</p>
+        <p>Before the bakery, that meant the <b>California Culinary Academy</b>, then years working up through Michelin starred kitchens (One Market and Acquerello), plus Moose's, Zuppa, Yoshi's, and opening Chow Danville as sous chef. The philosophy is simple. Get great ingredients, and don't mess them up.</p>
+        <p class="pullquote" style="font-size:1.3rem;margin-top:26px">"It's not that bad. The trees are actually quite lovely."</p>
+        <p style="font-size:.92rem">The name is from <i>The Princess Bride</i>, the fire swamp: a place full of well known terrors that somehow still has a little romance to it. Growing up, we watched it on repeat. Basically, I just love it.</p>
+        <p class="byline">Alex, Chef &amp; Owner</p>
+      </div>
+      <div class="reveal">
+        <div class="give">
+          <div class="big">$5,000+</div>
+          <div class="lbl">Donated to the NAACP Legal Defense Fund</div>
+          <p>A percentage of every loaf, bagel, and treat still goes to support racial justice, same as day one.</p>
+        </div>
+        <div class="team">
+          <figure>
+            <div class="av"><img src="https://static.wixstatic.com/media/01393c_c394713fd2034510ac2353ef22427548~mv2.jpg/v1/fill/w_320,h_320,al_c,q_85,enc_auto/file.jpg" alt="Alex"></div>
+            <figcaption><b>Alex</b>Chef / Owner</figcaption>
+          </figure>
+          <figure>
+            <div class="av"><img src="https://static.wixstatic.com/media/01393c_65cc6c8ad19c4c4dba03c9e6055aabe6~mv2.jpg/v1/fill/w_320,h_320,al_c,q_85,enc_auto/file.jpg" alt="Shari"></div>
+            <figcaption><b>Shari</b>Super-Genius</figcaption>
+          </figure>
+          <figure>
+            <div class="av"><img src="https://static.wixstatic.com/media/01393c_94b3fa1c46c246849563e91d5e10e06f~mv2.jpg/v1/fill/w_320,h_320,al_c,q_85,enc_auto/file.jpg" alt="Gronk the dog"></div>
+            <figcaption><b>Gronk</b>Mascot / Model</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="farms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good stuff from good people</span>
+      <h2>Farms &amp; Friends</h2>
+      <p>We can't make what we make without them, from the flour to the fruit. A few of our favorite growers, makers, and neighbors.</p>
+    </div>
+    <div class="farm-grid reveal">
+      <a class="farm" href="https://belfaresonoma.com/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">B</span></span><span class="txt"><span class="n">Belfare Sonoma <span class="arr">&#8599;</span></span><span class="r">Buns</span></span></a>
+      <a class="farm" href="https://www.fpfarm.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://static1.squarespace.com/static/5e14c15aee13265a0b70ae16/t/5e968ab37dcc25077f6f0a4e/1586924216411/icon.png?format=750w" alt="Front Porch Farm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">F</span></span><span class="txt"><span class="n">Front Porch Farm <span class="arr">&#8599;</span></span><span class="r">Farm</span></span></a>
+      <a class="farm" href="https://cuesa.org/seller/peach-farm" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">P</span></span><span class="txt"><span class="n">The Peach Farm <span class="arr">&#8599;</span></span><span class="r">Farm</span></span></a>
+      <a class="farm" href="https://www.rodriguezfarms.com/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">R</span></span><span class="txt"><span class="n">Rodriguez Farms <span class="arr">&#8599;</span></span><span class="r">Farm</span></span></a>
+      <a class="farm" href="https://thesantarosafarmersmarket.com/triple-t-ranch-and-farm/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">T</span></span><span class="txt"><span class="n">Triple T Ranch &amp; Farm <span class="arr">&#8599;</span></span><span class="r">Farm</span></span></a>
+      <a class="farm" href="https://www.kjorchards.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://images.squarespace-cdn.com/content/v1/5ef3cd5fea0e6d468e5ad707/1602796176745-RGC4ZFTTF1ZCUEFKMK6E/KJ-Logo-640-black.png?format=300w" alt="K&amp;J Orchards" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">K</span></span><span class="txt"><span class="n">K&amp;J Orchards <span class="arr">&#8599;</span></span><span class="r">Farm</span></span></a>
+      <a class="farm" href="https://centralmilling.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://centralmilling.com/wp-content/themes/central-milling/library/images/logo-sticky.png" alt="Central Milling" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">C</span></span><span class="txt"><span class="n">Central Milling <span class="arr">&#8599;</span></span><span class="r">Flour</span></span></a>
+      <a class="farm" href="https://marshallshoney.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://marshallshoney.com/wp-content/uploads/2023/11/cropped-MARSHALLS-FARM-high-quality-logo.400x264-180x119.jpg" alt="Marshall's Farm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">M</span></span><span class="txt"><span class="n">Marshall's Farm <span class="arr">&#8599;</span></span><span class="r">Honey</span></span></a>
+      <a class="farm" href="https://www.longertablefarm.com/" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">L</span></span><span class="txt"><span class="n">Longer Table Farm <span class="arr">&#8599;</span></span><span class="r">Farm</span></span></a>
+      <a class="farm" href="https://www.agriculturalinstitute.org/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://static1.squarespace.com/static/5fd7b5e8b59b81291926f482/t/5fd7be70f71287437cfcb9f1/1607974517854/aim.logo_MONO.ai%2Bweb.png?format=500w" alt="AIM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">A</span></span><span class="txt"><span class="n">AIM <span class="arr">&#8599;</span></span><span class="r">Markets</span></span></a>
+      <a class="farm" href="https://www.erinhuppceramics.com/" target="_blank" rel="noopener"><span class="logo-tile"><img class="inv" src="https://images.squarespace-cdn.com/content/v1/62aa84fe86a82a2a0d66c195/6732164d-bae7-43ec-814b-851ee26ee1c2/Typeface%2Bmonogram_white.png?format=300w" alt="Erin Hupp Ceramics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">E</span></span><span class="txt"><span class="n">Erin Hupp Ceramics <span class="arr">&#8599;</span></span><span class="r">Ceramics</span></span></a>
+      <a class="farm" href="https://millvalleypasta.com/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://images.squarespace-cdn.com/content/v1/5ed8071cfe87ca331826e832/1613190315938-EY1EY8NJ3ROTH841FT48/Artboard%2B1%402x.png?format=500w" alt="Mill Valley Pasta Co." onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">M</span></span><span class="txt"><span class="n">Mill Valley Pasta Co. <span class="arr">&#8599;</span></span><span class="r">Pasta</span></span></a>
+      <a class="farm" href="https://www.behance.net/decovarru" target="_blank" rel="noopener"><span class="logo-tile"><span class="mono" style="display:flex">D</span></span><span class="txt"><span class="n">Deborah Covarrubias <span class="arr">&#8599;</span></span><span class="r">Design</span></span></a>
+      <a class="farm" href="https://www.naacpldf.org/" target="_blank" rel="noopener"><span class="logo-tile"><img src="https://www.naacpldf.org/wp-content/uploads/logo-white-navy-background-square.png" alt="NAACP LDF" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="mono">N</span></span><span class="txt"><span class="n">NAACP LDF <span class="arr">&#8599;</span></span><span class="r">Justice</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!--
+  INSTAGRAM: official embed showing the real posts from the links provided.
+  These render the actual post images automatically, free, no account access.
+  Trade-off: Instagram's own card chrome (avatar, likes) is inside their iframe
+  and cannot be removed or perfectly size-matched from here.
+-->
+<section id="gram">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">@fireswampprovisions</span>
+      <h2>Fresh out of the oven</h2>
+      <p>Straight from the feed. Tap any post to open it on Instagram.</p>
+    </div>
+    <div id="igEmbed" class="ig-embed reveal"></div>
+    <div class="reveal" style="text-align:center;margin-top:30px">
+      <a class="btn ghost" href="https://www.instagram.com/fireswampprovisions" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section id="list">
+  <div class="wrap">
+    <div class="list-inner reveal">
+      <span class="eyebrow" style="justify-content:center">Join the list</span>
+      <h2>Hear about the good stuff first</h2>
+      <p>Weekly specials, market updates, and the occasional excellent treat, before anybody else.</p>
+      <form class="subscribe" onsubmit="return fakeSub(event)">
+        <input type="email" placeholder="your@email.com" required aria-label="Email">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+      <p id="subMsg" style="margin-top:18px;color:var(--gold);min-height:1.2em"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://static.wixstatic.com/media/01393c_5ddc8eef98e34e16b87d9b1e404d165f~mv2.png/v1/fit/w_220,h_220,q_90/file.png" alt="Fire Swamp Provisions logo">
+        <p>Local products, made with love and care. A portion of all proceeds donated to support social good.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Find Us</h4>
+        <a href="#find">Sunday market</a>
+        <a href="#find">Thursday market</a>
+        <a href="#find">Stockists</a>
+        <a href="mailto:fireswampprovisions@gmail.com?subject=Pre-order">Pre-order</a>
+      </div>
+      <div class="foot-col">
+        <h4>The Bakery</h4>
+        <a href="#bakes">Bakes</a>
+        <a href="#story">Our story</a>
+        <a href="#farms">Farms &amp; Friends</a>
+        <a href="https://www.fireswampprovisions.com/gift-card" target="_blank" rel="noopener">Gift cards</a>
+      </div>
+      <div class="foot-col">
+        <h4>Say Hi / Work With Us</h4>
+        <a href="mailto:fireswampprovisions@gmail.com">fireswampprovisions@gmail.com</a>
+        <a href="https://www.fireswampprovisions.com/jobs" target="_blank" rel="noopener">We're hiring</a>
+        <p>San Rafael, California</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="yr"></span> Fire Swamp Provisions</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/fireswampprovisions" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/FireSwampProvisions/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobilebar">
+  <a class="find" href="#find">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Find Us
+  </a>
+  <a class="order" href="mailto:fireswampprovisions@gmail.com?subject=Pre-order%20for%20market%20pickup">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    Pre-order
+  </a>
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 40));
+const toggle = document.getElementById('toggle'), links = document.getElementById('navlinks');
+toggle.addEventListener('click', () => { links.classList.toggle('open'); toggle.classList.toggle('open'); });
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); toggle.classList.remove('open'); }));
+const io = new IntersectionObserver((es) => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+(function(){
+  const now = new Date();
+  const day = now.getDay(), hr = now.getHours();
+  const names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const marketDays = [0,4];
+  const openNow = marketDays.includes(day) && hr >= 8 && hr < 13;
+  let nextOffset = 99, nextDay = day;
+  for(let i=0;i<=7;i++){ const d=(day+i)%7; if(marketDays.includes(d) && !(i===0 && hr>=13)){ nextOffset=i; nextDay=d; break; } }
+  const text = document.getElementById('heroStatusText'), dot = document.getElementById('heroDot');
+  if(openNow){ dot.classList.add('live'); const loc = day===0 ? 'Civic Center, San Rafael' : 'Ave of the Flags, San Rafael'; text.textContent = 'Open right now, ' + loc + ', til 1PM'; }
+  else if(nextOffset===0){ text.textContent = 'At market today, ' + names[nextDay] + ', 8AM to 1PM'; }
+  else { const when = nextOffset===1 ? 'tomorrow' : names[nextDay]; text.textContent = 'Next market: ' + when + ', San Rafael, 8 to 1'; }
+  document.querySelectorAll('.market').forEach(m => {
+    const md = +m.dataset.day, tag = m.querySelector('.tag');
+    if(openNow && md===day){ tag.classList.add('now'); tag.textContent='Open now'; }
+    else if(md===nextDay && nextOffset>=0){ tag.classList.add('next'); tag.textContent = nextOffset<=1 ? (nextOffset===0?'Today':'Tomorrow') : 'Up next'; }
+  });
+})();
+/* ===========================================================
+   INSTAGRAM, official embed. Free, no login, no API, no password.
+   Shows the REAL image from each of these 12 public posts and links
+   to them. Add or swap links anytime, one per line, in quotes.
+   To curate which show, just edit this list (skip any Reels/videos).
+   =========================================================== */
+const IG_POSTS = [
+  "https://www.instagram.com/p/DZ1GCcShwC8/",
+  "https://www.instagram.com/p/DZqur6NGteo/",
+  "https://www.instagram.com/p/DZYvdRJhdld/",
+  "https://www.instagram.com/p/DYdLK_1hJZZ/",
+  "https://www.instagram.com/p/DWtwyVcjcmb/",
+  "https://www.instagram.com/p/DWJZj38j7af/",
+  "https://www.instagram.com/p/DWElf5tARN8/",
+  "https://www.instagram.com/p/DVnzYunAQLh/",
+  "https://www.instagram.com/p/DP20P6rjrvL/",
+  "https://www.instagram.com/p/DPxqal6kaNN/",
+  "https://www.instagram.com/p/DPscdyaDpeG/",
+  "https://www.instagram.com/p/DNEpe0VS1X0/",
+];
+
+(function(){
+  const embed = document.getElementById('igEmbed');
+  if(!embed || !IG_POSTS.length) return;
+  embed.innerHTML = IG_POSTS.map(function(u){
+    return '<blockquote class="instagram-media" data-instgrm-permalink="'+u+'" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:340px"></blockquote>';
+  }).join('');
+  const s = document.createElement('script');
+  s.async = true; s.src = 'https://www.instagram.com/embed.js';
+  s.onload = function(){ if(window.instgrm) window.instgrm.Embeds.process(); };
+  document.body.appendChild(s);
+})();
+
+function fakeSub(e){ e.preventDefault(); e.target.querySelector('input').value=''; document.getElementById('subMsg').textContent="You're on the list. Now you'll hear about the cool stuff before anybody else."; return false; }
+</script>
+</body>
+</html>
