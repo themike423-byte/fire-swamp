@@ -158,8 +158,8 @@ section{position:relative;padding:104px 0}
 .ig-grid figure:hover img{transform:scale(1.08)}
 .ig-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,13,11,.35),transparent 60%);opacity:0;transition:opacity .3s}
 .ig-grid figure:hover::after{opacity:1}
-.ig-embed{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:30px}
-.ig-embed .instagram-media{margin:0!important}
+.ig-embed{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
+.ig-embed iframe{width:100%;aspect-ratio:1/1.4;border:0;border-radius:8px;background:var(--oven);box-shadow:0 1px 8px rgba(0,0,0,.3)}
 .ig-cell{aspect-ratio:1;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--oven);position:relative;display:block}
 .ig-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .ig-cell:hover img{transform:scale(1.08)}
@@ -196,6 +196,7 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
   .bakes{grid-template-columns:1fr}
   .story-grid{grid-template-columns:1fr;gap:40px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .ig-embed{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
   body{font-size:16px;--barh:64px}
@@ -219,6 +220,7 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
   .sec-head{margin-bottom:38px}
   .stk-grid,.farm-grid{grid-template-columns:1fr}
   .ig-grid{grid-template-columns:repeat(2,1fr)}
+  .ig-embed{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
   .foot-grid{grid-template-columns:1fr;gap:26px}
   .subscribe{flex-direction:column}
   .subscribe .btn{justify-content:center;padding:15px}
@@ -572,13 +574,15 @@ const IG_POSTS = [
 (function(){
   const embed = document.getElementById('igEmbed');
   if(!embed || !IG_POSTS.length) return;
+  // Lightweight, mobile-friendly: render each post as a native lazy-loaded
+  // /embed/ iframe. No embed.js runtime, and off-screen posts don't load
+  // until the visitor scrolls near them, so they never block initial load.
   embed.innerHTML = IG_POSTS.map(function(u){
-    return '<blockquote class="instagram-media" data-instgrm-permalink="'+u+'" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:340px"></blockquote>';
+    var m = u.match(/\/(?:p|reel)\/([^\/?#]+)/);
+    if(!m) return '';
+    return '<iframe loading="lazy" title="Fire Swamp Provisions on Instagram" '
+      + 'src="https://www.instagram.com/p/'+m[1]+'/embed/"></iframe>';
   }).join('');
-  const s = document.createElement('script');
-  s.async = true; s.src = 'https://www.instagram.com/embed.js';
-  s.onload = function(){ if(window.instgrm) window.instgrm.Embeds.process(); };
-  document.body.appendChild(s);
 })();
 
 function fakeSub(e){ e.preventDefault(); e.target.querySelector('input').value=''; document.getElementById('subMsg').textContent="You're on the list. Now you'll hear about the cool stuff before anybody else."; return false; }
