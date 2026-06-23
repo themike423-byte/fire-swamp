@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fire Swamp Provisions, Fresh Artisan Breads in San Rafael and Marin</title>
+<title>Fire Swamp Provisions, Fresh Breads &amp; Pastries in San Rafael and Marin</title>
 <meta name="description" content="Sourdough, bagels, and good things to eat. Handmade in Marin by a real person. Find us at the Sunday and Thursday San Rafael farmers markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@ header.nav.solid{background:rgba(18,13,11,.97);backdrop-filter:blur(12px);border
 header.nav.solid .brand img{width:50px;height:50px;padding:6px}
 .brand .bt{font-family:var(--mono);font-size:.82rem;letter-spacing:.17em;text-transform:uppercase;color:var(--crumb);line-height:1.45}
 .brand .bt b{font-weight:700;color:var(--gold)}
-nav.links{display:flex;align-items:center;gap:32px}
+nav.links{display:flex;align-items:center;gap:24px}
 nav.links a{font-size:.95rem;color:var(--crumb);opacity:.85;transition:opacity .2s;position:relative}
 nav.links a:hover{opacity:1}
 nav.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--ember);transition:width .25s}
@@ -189,6 +189,41 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
 .socials a:hover{border-color:var(--ember);color:var(--gold);transform:translateY(-2px)}
 .socials svg{width:17px;height:17px}
 
+#giftcards{background:linear-gradient(var(--char),var(--char-2))}
+.gift-wrap{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.gift-copy h2{font-size:clamp(2.1rem,5vw,3.6rem);margin-top:16px}
+.gift-copy p{color:var(--ash);margin:18px 0 28px;font-size:1.08rem;max-width:48ch}
+.gift-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.gift-note{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ash)}
+.giftcard-inner{aspect-ratio:1.6/1;border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(150deg,var(--ember-deep),var(--char-2) 62%);border:1px solid rgba(243,233,216,.16);box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);position:relative;overflow:hidden}
+.giftcard-inner::before{content:"";position:absolute;top:-45%;right:-12%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(233,162,59,.28),transparent 70%)}
+.gc-top{display:flex;align-items:center;gap:13px;position:relative}
+.gc-top img{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#fffaf2,var(--crumb) 74%);padding:6px;box-shadow:0 0 0 1px rgba(243,233,216,.5)}
+.gc-brand{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crumb);line-height:1.45}
+.gc-brand b{color:var(--gold);font-weight:700}
+.gc-mid{font-family:var(--display);font-size:2.1rem;font-weight:600;color:var(--crumb);position:relative}
+.gc-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--crumb);position:relative}
+.gc-amt{color:var(--gold);font-weight:700}
+
+#jobs{background:linear-gradient(var(--char-2),var(--char))}
+.jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.job{border:1px solid var(--line);border-radius:8px;padding:28px;background:linear-gradient(155deg,var(--oven),var(--char-2));display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.job:hover{transform:translateY(-4px);border-color:rgba(226,98,43,.4)}
+.job-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.job h3{font-size:1.4rem}
+.job-pay{font-family:var(--mono);font-weight:700;font-size:.8rem;color:var(--gold);white-space:nowrap}
+.job-desc{color:var(--ash);font-size:.95rem;margin-top:12px}
+.job dl{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:.9rem}
+.job dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);padding-top:3px}
+.job dd{color:var(--crumb)}
+.job-act{margin-top:auto;padding-top:22px}
+.job-act a{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--crumb);display:inline-flex;align-items:center;gap:.5em;border-bottom:1px solid var(--line);padding-bottom:4px;transition:color .2s,border-color .2s}
+.job-act a:hover{color:var(--gold);border-color:var(--gold)}
+.jobs-note{margin-top:30px;font-size:.96rem;color:var(--ash);border-left:2px solid var(--ember);padding:6px 0 6px 20px;max-width:72ch}
+.jobs-note b{color:var(--crumb)}
+.jobs-note a{color:var(--gold)}
+.jobs-note a:hover{color:var(--ember)}
+
 .mobilebar{display:none}
 
 @media(max-width:980px){
@@ -197,11 +232,12 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
   .story-grid{grid-template-columns:1fr;gap:40px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
   .ig-embed{grid-template-columns:repeat(2,1fr)}
+  .gift-wrap{grid-template-columns:1fr;gap:36px}
+  .gift-copy{order:2}
+  .giftcard{order:1;max-width:460px}
+  .jobs-grid{grid-template-columns:1fr}
 }
-@media(max-width:760px){
-  body{font-size:16px;--barh:64px}
-  .brand img{width:50px;height:50px}
-  .brand .bt{font-size:.74rem;letter-spacing:.14em}
+@media(max-width:900px){
   nav.links{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:min(82vw,340px);background:var(--char-2);flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;padding:80px 36px 40px;transform:translateX(100%);transition:transform .35s;border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.5);overflow-y:auto}
   nav.links.open{transform:none}
   nav.links a{font-size:1.25rem;padding:12px 0;width:100%;opacity:.95}
@@ -210,6 +246,12 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
   .menu-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
   .menu-toggle.open span:nth-child(2){opacity:0}
   .menu-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+}
+@media(max-width:760px){
+  body{font-size:16px;--barh:64px}
+  .brand img{width:50px;height:50px}
+  .brand .bt{font-size:.74rem;letter-spacing:.14em}
+  /* mobile nav drawer + hamburger handled in @media(max-width:900px) above */
   .hero{min-height:auto;padding:140px 0 70px}
   .hero-seal{width:134px;height:134px;margin:0 auto 22px}
   .hero h1{font-size:clamp(2.6rem,12vw,3.6rem)}
@@ -246,6 +288,8 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
     <a href="#bakes">Bakes</a>
     <a href="#story">Story</a>
     <a href="#farms">Farms &amp; Friends</a>
+    <a href="#giftcards">Gift Cards</a>
+    <a href="#jobs">Jobs</a>
     <a href="mailto:fireswampprovisions@gmail.com?subject=Pre-order%20for%20market%20pickup" class="btn">Pre-order</a>
   </nav>
   <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -263,8 +307,8 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
     <div class="hero-status" id="heroStatus">
       <span class="dot" id="heroDot"></span><span id="heroStatusText">Checking the market schedule...</span>
     </div>
-    <h1>Fresh bread is a <span class="glow">here&#8209;and&#8209;now</span> thing.</h1>
-    <p class="lede">Sourdough, bagels, and other good things to eat. Made by hand in Marin <b>by a real person</b>, with really good ingredients from the people who grow them. Here is where to find ours this week.</p>
+    <h1>Sweet, savory, and <span class="glow">here&#8209;and&#8209;now</span>.</h1>
+    <p class="lede">Sourdough and bagels, sure &mdash; plus scones, laminated pastries, and a case of sweet and savory good things that changes with the season. Made by hand in Marin <b>by a real person</b>, with really good ingredients from the people who grow them. Here&rsquo;s where to find ours this week.</p>
     <div class="hero-cta">
       <a href="#find" class="btn">Where to find us</a>
       <a href="#bakes" class="btn ghost">See what we bake</a>
@@ -368,6 +412,32 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
   </div>
 </section>
 
+<section id="giftcards">
+  <div class="wrap">
+    <div class="gift-wrap">
+      <div class="gift-copy reveal">
+        <span class="eyebrow">Give the good stuff</span>
+        <h2>Gift cards</h2>
+        <p>Know someone who'd be very happy with a bag of warm bagels and a laminated something? A Fire Swamp gift card is good for everything we make &mdash; bread, pastries, the lot &mdash; at the market or for pickup, in whatever amount feels right.</p>
+        <div class="gift-cta">
+          <a class="btn" href="https://www.fireswampprovisions.com/gift-card" target="_blank" rel="noopener">Buy a gift card</a>
+          <span class="gift-note">Redeemable at both San Rafael markets</span>
+        </div>
+      </div>
+      <div class="giftcard reveal" aria-hidden="true">
+        <div class="giftcard-inner">
+          <div class="gc-top">
+            <img src="https://static.wixstatic.com/media/01393c_5ddc8eef98e34e16b87d9b1e404d165f~mv2.png/v1/fit/w_220,h_220,q_90/file.png" alt="">
+            <span class="gc-brand">Fire&nbsp;Swamp<br><b>Provisions</b></span>
+          </div>
+          <div class="gc-mid">Gift Card</div>
+          <div class="gc-bot"><span>Bread &middot; Bagels &middot; Pastries</span><span class="gc-amt">Any amount</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="story">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -455,6 +525,49 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
   </div>
 </section>
 
+<section id="jobs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Work with us</span>
+      <h2>Join the crew</h2>
+      <p>We're a very small artisan bakery making local, market-driven breads and pastries by hand, with love and care. If that sounds like your kind of place, come bake or sell with us.</p>
+    </div>
+    <div class="jobs-grid">
+      <article class="job reveal">
+        <div class="job-top"><h3>Farmers Market Associate</h3><span class="job-pay">$23&ndash;25/hr + tips</span></div>
+        <p class="job-desc">Be the friendly face of Fire Swamp at the Marin farmers markets &mdash; set up the booth, talk bread and pastries, and run sales.</p>
+        <dl>
+          <dt>Where</dt><dd>Marin farmers markets, San Rafael</dd>
+          <dt>When</dt><dd>Thursdays &amp; Sundays, 5:30 AM&ndash;~2 PM</dd>
+          <dt>Perks</dt><dd>Tips, $30/market trade allowance, 25% off consumables</dd>
+        </dl>
+        <div class="job-act"><a href="mailto:fireswampprovisions@gmail.com?subject=Farmers%20Market%20Associate%20application">Apply for this role</a></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-top"><h3>AM Baker</h3><span class="job-pay">$23&ndash;26/hr</span></div>
+        <p class="job-desc">Early mornings on the bench &mdash; mixing, shaping, and baking the day's breads and pastries.</p>
+        <dl>
+          <dt>Where</dt><dd>San Rafael, CA 94901</dd>
+          <dt>When</dt><dd>40 hrs/wk, Mon&ndash;Fri, start 3&ndash;5 AM</dd>
+          <dt>Need</dt><dd>1&ndash;2 yrs production baking, baker's math, lift 50+ lbs, ServSafe</dd>
+        </dl>
+        <div class="job-act"><a href="mailto:fireswampprovisions@gmail.com?subject=AM%20Baker%20application">Apply for this role</a></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-top"><h3>PM Baker</h3><span class="job-pay">$23&ndash;26/hr</span></div>
+        <p class="job-desc">Afternoon and evening production &mdash; mixing, shaping, baking, and keeping the bakery humming.</p>
+        <dl>
+          <dt>Where</dt><dd>San Rafael, CA 94901</dd>
+          <dt>When</dt><dd>30&ndash;40 hrs/wk, Wed&ndash;Sat (4&times;10-hr shifts)</dd>
+          <dt>Need</dt><dd>1&ndash;2 yrs production baking, baker's math, lift 50+ lbs, ServSafe</dd>
+        </dl>
+        <div class="job-act"><a href="mailto:fireswampprovisions@gmail.com?subject=PM%20Baker%20application">Apply for this role</a></div>
+      </article>
+    </div>
+    <p class="jobs-note reveal"><b>How to apply:</b> Email Alex at <a href="mailto:fireswampprovisions@gmail.com">fireswampprovisions@gmail.com</a> with a quick hello and your resume. For the baker roles, please include three professional references.</p>
+  </div>
+</section>
+
 <section id="list">
   <div class="wrap">
     <div class="list-inner reveal">
@@ -489,12 +602,12 @@ footer{background:var(--char-2);border-top:1px solid var(--line);padding:70px 0 
         <a href="#bakes">Bakes</a>
         <a href="#story">Our story</a>
         <a href="#farms">Farms &amp; Friends</a>
-        <a href="https://www.fireswampprovisions.com/gift-card" target="_blank" rel="noopener">Gift cards</a>
+        <a href="#giftcards">Gift cards</a>
       </div>
       <div class="foot-col">
         <h4>Say Hi / Work With Us</h4>
         <a href="mailto:fireswampprovisions@gmail.com">fireswampprovisions@gmail.com</a>
-        <a href="https://www.fireswampprovisions.com/jobs" target="_blank" rel="noopener">We're hiring</a>
+        <a href="#jobs">We're hiring</a>
         <p>San Rafael, California</p>
       </div>
     </div>
